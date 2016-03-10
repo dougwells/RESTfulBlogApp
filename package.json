@@ -1,0 +1,17 @@
+{
+  "name": "restful-blog-app",
+  "version": "1.0.0",
+  "description": "blog app using semantic-ui",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Doug Wells",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.6"
+  }
+}
