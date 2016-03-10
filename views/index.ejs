@@ -1,0 +1,10 @@
+<h1>List of my blog posts</h1>
+
+<% blogs.forEach(function(blog){ %>
+    <h3><%=blog.name%></h3>
+    <a href="/blogs/<%= blog._id %>">
+        <image height="300px" width="300px" src="<%=blog.image%>">
+    </a>
+    <p><%=blog.body%></p>
+    <button href="#"><%=blog._id%></button>
+<% }); %>
