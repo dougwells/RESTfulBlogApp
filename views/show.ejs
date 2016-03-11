@@ -1,7 +1,14 @@
 <H1>See 1 blog post here</H1>
+<a href="/blogs">Back to All Blog Posts</a>
 
 <h2><%=blog.name%></h2>
 <img src="<%=blog.image%>">
 <h3><%=blog._id%></h3>
-<a href="/blogs/edit/<%=blog._id%>">Edit</a>
+<a href="/blogs/<%=blog._id%>/edit">Edit</a>
 <a data-method='delete' href='/blogs/<%=blog._id%>'>Delete</a>
+
+<form action="/blogs/<%=blog._id %>?_method=DELETE" method="POST">
+    <!--<label for="name">Name: </label>-->
+    <!--<input value="<%=blog.name%>" id="name" name="name">-->
+    <button>Delete</button>
+</form>

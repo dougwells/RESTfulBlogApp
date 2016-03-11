@@ -3,8 +3,8 @@
 <img src="<%=blog.image%>">
 
 
-<form action="/blogs/:id" method="PUT">
+<form action="/blogs/<%=blog._id %>?_method=PUT" method="POST">
     <label for="name">Name: </label>
-    <input placeholder="Name" id="name" name="name">
-    <button>Submit</button>
+    <input value="<%=blog.name%>" id="name" name="name">
+    <input type="submit" />
 </form>

@@ -1,4 +1,6 @@
-<h1>List of my blog posts</h1>
+<% include partials/header %>
+
+<h2>List of my blog posts</h2>
 <a href="/blogs/new">Create new post</a>
 
 <% blogs.forEach(function(blog){ %>
@@ -8,3 +10,5 @@
     </a>
     <p><%=blog.body%></p>
 <% }); %>
+
+<% include ./partials/footer %>
