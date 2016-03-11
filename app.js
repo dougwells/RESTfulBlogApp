@@ -52,21 +52,57 @@ app.get("/blogs/new", function(req, res){
 
 //Create: Create new blog post and redirect to index of all blog posts
 app.post("/blogs", function(req, res){
-    console.log("new blog created");
+    // res.send(req.body.name);
+    Blog.create({name:req.body.name, image:req.body.image, body:req.body.body});
     res.redirect("/blogs");
 });
 
+
 //Show:  Show information about 1 selected blog post
-//New: Show new blog form 
 app.get("/blogs/:id", function(req, res){
     // console.log(req.params.id);
     Blog.findById(req.params.id, function(err, blog){
-        if(err){console.log("param error");
+        if(err){console.log("app.get(/blogs/:id) error");
         }else{
         res.render("show", {blog:blog}); 
         }
     });
-    
+});
+
+//Edit:     Edit information about 1 selected blog post
+//Edit:     Render edit blog form 
+app.get("/blogs/edit/:id", function(req, res){
+    Blog.findById(req.params.id, function(err, blog){
+        if(err){console.log("app.get(/blogs/edit/:id) error");
+        }else{
+        res.render("edit", {blog:blog}); 
+        }
+    });
+});
+
+//Submit changes & re-route to list of all blog posts
+app.put("/blogs/:id", function(req, res){
+    res.send("Edits received");
+    // Blog.create({name:req.body.name, image:req.body.image, body:req.body.body});
+    // res.redirect("/blogs");
+});
+
+// app.put("/blogs/:id", function(req, res){
+//     console.log('blog entry modified');
+//     res.send('Change received.  Blog will be modified');
+//     // Blog.findByIdAndUpdate(req.params._id)
+// });
+
+//Destroy:    Delete item and redirect to list of remaining blogs
+
+app.delete("/blogs/:id", function(req, res){
+    res.send("Delete request received");
+    // Blog.findById(req.params.id, function(err, blog){
+    //     if(err){console.log("param error");
+    //     }else{
+    //     res.render("edit", {blog:blog}); 
+    //     }
+    // });
 });
 
 

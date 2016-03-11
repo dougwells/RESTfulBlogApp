@@ -1,0 +1,10 @@
+<h1>Edit blog post here</h1>
+<h3>Unique Blog ID: <%=blog._id%></h3>
+<img src="<%=blog.image%>">
+
+
+<form action="/blogs/:id" method="PUT">
+    <label for="name">Name: </label>
+    <input placeholder="Name" id="name" name="name">
+    <button>Submit</button>
+</form>

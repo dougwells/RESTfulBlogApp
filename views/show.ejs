@@ -1,3 +1,7 @@
 <H1>See 1 blog post here</H1>
 
+<h2><%=blog.name%></h2>
 <img src="<%=blog.image%>">
+<h3><%=blog._id%></h3>
+<a href="/blogs/edit/<%=blog._id%>">Edit</a>
+<a data-method='delete' href='/blogs/<%=blog._id%>'>Delete</a>
