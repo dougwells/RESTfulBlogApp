@@ -4,7 +4,7 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override");
         
-//APP CONFIG
+//APP CONFIGURATION
 mongoose.connect("mongodb://localhost/restful_blog_app");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
